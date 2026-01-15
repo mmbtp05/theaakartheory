@@ -70,7 +70,7 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h4 className="text-white font-semibold">Services</h4>
             <ul className="space-y-2">
-              {["Residential Design", "Commercial Spaces", "Consultation & Planning"].map(
+              {["Residential Interiors", "Commercial Interiors", "Custom Furniture & Detailing", "Design Consultation", "Renovation & Makeovers"].map(
                 (service) => (
                   <li key={service}>
                     <a

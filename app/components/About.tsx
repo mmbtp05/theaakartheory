@@ -25,7 +25,7 @@ export default function About() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -35,7 +35,7 @@ export default function About() {
       opacity: 1,
       x: 0,
       scale: 1,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -43,7 +43,7 @@ export default function About() {
     hidden: { scaleX: 0 },
     visible: {
       scaleX: 1,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -77,26 +77,28 @@ export default function About() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-white"
             >
-              Who We Are
+              About Us
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
               className="text-gray-400 text-lg leading-relaxed"
             >
-              We bring creativity and precision to every interior design project,
-              helping our clients craft elegant, functional spaces that reflect
-              their unique vision and lifestyle.
+              At THE AAKAR THEORY, we are creators of meaningful spaces. Our work goes beyond decoration — we design environments that support the way you live, work, and feel. With a strong focus on clarity, comfort, and craftsmanship, we turn empty spaces into well-designed experiences.
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-gray-400 text-lg leading-relaxed"
             >
-              With years of experience in residential and commercial design, The
-              Aakar Theory Interior Design Studio has become synonymous with
-              luxury, innovation, and attention to detail. Our approach combines
-              timeless aesthetics with modern functionality.
+              As a comprehensive interior solution studio, we manage every step of the journey. From the first design idea to the final handover, our team ensures smooth coordination, quality execution, and complete transparency. This one-point approach makes the entire process simple, organised, and stress-free for you.
+            </motion.p>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-gray-400 text-lg leading-relaxed"
+            >
+              Our strength lies in understanding people, studying spaces, and shaping designs that balance style with purpose. Every project is a fresh opportunity to build something thoughtful, functional, and timeless.
             </motion.p>
 
             {/* Stats or highlights */}
@@ -118,25 +120,11 @@ export default function About() {
             className="relative h-96 sm:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#ba9550]/20 to-transparent z-10"></div>
-            <div className="absolute inset-0 bg-[#ba9550]/10 backdrop-blur-sm"></div>
-            <div className="w-full h-full bg-gradient-to-br from-[#152731] to-[#ba9550]/30 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-full border-2 border-[#ba9550] mx-auto mb-4 flex items-center justify-center">
-                  <svg
-                    className="w-12 h-12 text-[#ba9550]"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <p className="text-gray-400">Interior Design Showcase</p>
-              </div>
-            </div>
+            <img
+              src="/siteImages/image5.jpg"
+              alt="Interior Design Showcase"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </motion.div>
       </div>

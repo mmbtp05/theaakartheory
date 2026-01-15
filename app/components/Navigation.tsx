@@ -45,13 +45,15 @@ export default function Navigation() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex items-center gap-3 cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <div className="w-10 h-10 rounded-full border-2 border-[#ba9550] flex items-center justify-center">
-              <span className="text-[#ba9550] font-bold text-lg">₹</span>
-            </div>
-            <span className="text-white font-semibold hidden sm:inline">
+            <img
+              src="/aakar-33 (1).png"
+              alt="The Aakar Theory Logo"
+              className="h-12 w-auto object-contain"
+            />
+            <span className="text-white font-semibold text-lg hidden sm:inline">
               The Aakar Theory
             </span>
           </motion.div>
@@ -82,19 +84,16 @@ export default function Navigation() {
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span
-                className={`block h-0.5 w-full bg-[#ba9550] transition-all duration-300 ${
-                  isOpen ? "rotate-45 translate-y-2" : ""
-                }`}
+                className={`block h-0.5 w-full bg-[#ba9550] transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
               />
               <span
-                className={`block h-0.5 w-full bg-[#ba9550] transition-all duration-300 ${
-                  isOpen ? "opacity-0" : ""
-                }`}
+                className={`block h-0.5 w-full bg-[#ba9550] transition-all duration-300 ${isOpen ? "opacity-0" : ""
+                  }`}
               />
               <span
-                className={`block h-0.5 w-full bg-[#ba9550] transition-all duration-300 ${
-                  isOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
+                className={`block h-0.5 w-full bg-[#ba9550] transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
               />
             </div>
           </motion.button>

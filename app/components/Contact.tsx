@@ -34,7 +34,7 @@ export default function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -43,7 +43,7 @@ export default function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6,  },
+      transition: { duration: 0.6, },
     },
   };
 
@@ -51,7 +51,7 @@ export default function Contact() {
     hidden: { scaleX: 0 },
     visible: {
       scaleX: 1,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -60,7 +60,7 @@ export default function Contact() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -147,7 +147,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Call Us</h3>
-                <p className="text-[#ba9550] font-semibold">+91 9414420503</p>
+                <p className="text-[#ba9550] font-semibold">+91 6376554145</p>
               </div>
             </div>
           </motion.div>
@@ -169,8 +169,8 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Owner</h3>
-                <p className="text-[#ba9550] font-semibold">Mehak Nagpal</p>
+                <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
+                <p className="text-[#ba9550] font-semibold">info@theaakartheory.com</p>
               </div>
             </div>
           </motion.div>

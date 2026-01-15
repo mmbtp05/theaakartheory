@@ -13,24 +13,38 @@ interface ServiceCard {
 const services: ServiceCard[] = [
   {
     id: 1,
-    title: "Residential Design",
+    title: "Residential Interiors",
     description:
-      "Elegant interiors tailored to your lifestyle. We transform houses into dream homes with personalized touches and sophisticated design solutions.",
+      "Tailor-made home interiors backed by expert design experience. High-quality materials, custom furniture, and premium lighting for refined living.",
     icon: "🏠",
   },
   {
     id: 2,
-    title: "Commercial Spaces",
+    title: "Commercial Interiors",
     description:
-      "Inspiring environments for businesses. From offices to retail spaces, we create functional and impressive commercial interiors.",
+      "Smart space planning that enhances efficiency, branding, and customer experience with high-quality materials and complete turnkey execution.",
     icon: "🏢",
   },
   {
     id: 3,
-    title: "Consultation & Planning",
+    title: "Custom Furniture & Detailing",
     description:
-      "Expert guidance from concept to completion. We help visualize your dream space and ensure every detail aligns with your vision.",
+      "Bespoke furniture designed to match your space, style, and functionality needs with precision detailing and premium craftsmanship.",
+    icon: "🪑",
+  },
+  {
+    id: 4,
+    title: "Design Consultation",
+    description:
+      "Expert guidance on layout planning, theme direction, material selection, and professional recommendations to improve functionality and aesthetics.",
     icon: "💡",
+  },
+  {
+    id: 5,
+    title: "Renovation & Makeovers",
+    description:
+      "Complete renovation services including dismantling, false ceiling work, painting, flooring, tiling, electrical, plumbing, and carpentry with high-quality workmanship.",
+    icon: "🔨",
   },
 ];
 
@@ -56,7 +70,7 @@ export default function Services() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -65,7 +79,7 @@ export default function Services() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
     hover: {
       y: -10,
@@ -77,7 +91,7 @@ export default function Services() {
     hidden: { scaleX: 0 },
     visible: {
       scaleX: 1,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -125,7 +139,7 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
         >
           {services.map((service, index) => (
             <motion.div

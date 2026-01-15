@@ -13,39 +13,63 @@ interface ProjectCard {
 const projects: ProjectCard[] = [
   {
     id: 1,
-    title: "Modern Kitchen Design",
+    title: "Elegant Living Space",
     category: "Residential",
-    image: "🏠",
+    image: "/siteImages/image6.jpg",
   },
   {
     id: 2,
-    title: "Contemporary Living Space",
+    title: "Modern Interior Design",
     category: "Residential",
-    image: "🛋️",
+    image: "/siteImages/image7.jpg",
   },
   {
     id: 3,
-    title: "Minimalist Kitchen",
+    title: "Contemporary Home",
     category: "Residential",
-    image: "👨‍🍳",
+    image: "/siteImages/image8.jpg",
   },
   {
     id: 4,
-    title: "Luxury Interior",
+    title: "Luxury Living Room",
     category: "Residential",
-    image: "✨",
+    image: "/siteImages/image9.jpg",
   },
   {
     id: 5,
-    title: "Modern Wall Art",
-    category: "Decoration",
-    image: "🎨",
+    title: "Sophisticated Design",
+    category: "Residential",
+    image: "/siteImages/image10.jpg",
   },
   {
     id: 6,
-    title: "Bedroom Design",
+    title: "Premium Interior",
     category: "Residential",
-    image: "🛏️",
+    image: "/siteImages/image11.jpg",
+  },
+  {
+    id: 7,
+    title: "Refined Space",
+    category: "Residential",
+    image: "/siteImages/image12.jpg",
+  },
+  {
+    id: 8,
+    title: "Stylish Living Area",
+    category: "Residential",
+    image: "/siteImages/image13.jpg",
+  },
+  {
+    id: 9,
+    title: "Thoughtful Design",
+    category: "Residential",
+    image: "/siteImages/image14.jpg",
+  },
+  {
+    id: 10,
+    title: "Timeless Interior",
+    category: "Residential",
+    image: "/siteImages/image15.jpg",
   },
 ];
 
@@ -71,7 +95,7 @@ export default function Portfolio() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -80,7 +104,7 @@ export default function Portfolio() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.6,  },
+      transition: { duration: 0.6, },
     },
     hover: {
       scale: 1.05,
@@ -92,7 +116,7 @@ export default function Portfolio() {
     hidden: { scaleX: 0 },
     visible: {
       scaleX: 1,
-      transition: { duration: 0.8,  },
+      transition: { duration: 0.8, },
     },
   };
 
@@ -149,10 +173,12 @@ export default function Portfolio() {
               whileHover="hover"
               className="group relative h-64 sm:h-80 rounded-2xl overflow-hidden cursor-pointer"
             >
-              {/* Background image or placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#152731] to-[#ba9550]/30 flex items-center justify-center">
-                <div className="text-6xl sm:text-7xl">{project.image}</div>
-              </div>
+              {/* Background image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">

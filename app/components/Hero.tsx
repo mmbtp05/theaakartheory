@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { scrollToSection } from "../utils/scrollToSection";
 
 const backgroundImages = [
-  "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&h=900&fit=crop",
-  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&h=900&fit=crop",
-  "https://images.unsplash.com/photo-1565183966519-514a57ba29a8?w=1600&h=900&fit=crop",
-  "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&h=900&fit=crop",
+  "/siteImages/image1.jpg",
+  "/siteImages/image2.jpg",
+  "/siteImages/image3.jpg",
+  "/siteImages/image4.jpg",
 ];
 
 export default function Hero() {
@@ -113,24 +113,22 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
           >
-            Reimagine Your Space,{" "}
-            <span className="text-[#ba9550]">Expert Execution.</span>
+            THE AAKAR THEORY
           </motion.h1>
+
+          <motion.h2
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#ba9550] mt-4"
+          >
+            DESIGN BUILD INTERIOR
+          </motion.h2>
 
           {/* Subheading */}
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
+            className="text-xl sm:text-2xl text-white max-w-2xl mx-auto font-light"
           >
-            Welcome to The Aakar Theory Interior Design Studio.
-          </motion.p>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto"
-          >
-            Where creativity meets precision, transforming spaces into timeless
-            masterpieces.
+            Where design meets purpose and spaces come alive.
           </motion.p>
 
           {/* CTA Button */}
