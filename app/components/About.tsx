@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -104,11 +105,11 @@ export default function About() {
             {/* Stats or highlights */}
             <motion.div variants={itemVariants} className="grid grid-cols-2 gap-6 pt-4">
               <div className="border-l-2 border-[#ba9550] pl-4">
-                <p className="text-3xl font-bold text-[#ba9550]">500+</p>
+                <p className="text-3xl font-bold text-[#ba9550]">100+</p>
                 <p className="text-gray-400 text-sm">Projects Completed</p>
               </div>
               <div className="border-l-2 border-[#ba9550] pl-4">
-                <p className="text-3xl font-bold text-[#ba9550]">10+</p>
+                <p className="text-3xl font-bold text-[#ba9550]">5+</p>
                 <p className="text-gray-400 text-sm">Years Experience</p>
               </div>
             </motion.div>
@@ -117,14 +118,17 @@ export default function About() {
           {/* Right Image */}
           <motion.div
             variants={imageVariants}
-            className="relative h-96 sm:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative inline-block mx-auto rounded-2xl overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#ba9550]/20 to-transparent z-10"></div>
-            <img
-              src="/siteImages/image5.jpg"
-              alt="Interior Design Showcase"
-              className="w-full h-full object-cover"
+            <Image
+              src="/aakarabout.jpeg"
+              alt="The Aakar Theory — interior design studio"
+              width={380}
+              height={507}
+              className="block"
+              priority
             />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#ba9550]/20 to-transparent pointer-events-none"></div>
           </motion.div>
         </motion.div>
       </div>

@@ -1,15 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { navigationItems } from "../constants/navigation";
 import { scrollToSection } from "../utils/scrollToSection";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isHome = pathname === "/";
 
   const handleNavClick = (href: string) => {
-    scrollToSection(href);
+    if (href === "services") {
+      router.push("/services");
+      setIsOpen(false);
+      return;
+    }
+    if (isHome) {
+      scrollToSection(href);
+    } else {
+      router.push(`/#${href}`);
+    }
+    setIsOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    if (isHome) {
+      scrollToSection("home");
+    } else {
+      router.push("/");
+    }
     setIsOpen(false);
   };
 
@@ -41,22 +65,25 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div
+          <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 cursor-pointer"
-            onClick={() => scrollToSection("home")}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleLogoClick}
+            aria-label="The Aakar Theory - Home"
+            className="flex items-center cursor-pointer"
           >
-            <img
+            <Image
               src="/aakar-33 (1).png"
               alt="The Aakar Theory Logo"
+              width={120}
+              height={48}
+              priority
               className="h-12 w-auto object-contain"
             />
-            <span className="text-white font-semibold text-lg hidden sm:inline">
-              The Aakar Theory
-            </span>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">

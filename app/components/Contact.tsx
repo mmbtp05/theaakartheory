@@ -112,7 +112,7 @@ export default function Contact() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
           >
-            Let's Connect
+            Let&apos;s Connect
           </motion.h2>
 
           <motion.p
@@ -197,9 +197,9 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Visit Us</h3>
                 <p className="text-[#ba9550] font-semibold text-sm">
-                  New Dhan Mandi Shop #111
+                  Southend Homes, Jagatpura
                   <br />
-                  Harumangarh Town, Rajasthan 335513
+                  Karolan Ka Barh, Jaipur, Rajasthan 302017
                 </p>
               </div>
             </div>
@@ -288,7 +288,7 @@ export default function Contact() {
               exit={{ opacity: 0, y: 10 }}
               className="mt-6 p-4 rounded-lg bg-[#ba9550]/20 border border-[#ba9550]/50 text-center text-[#ba9550]"
             >
-              Thank you for reaching out! We'll get back to you soon.
+              Thank you for reaching out! We&apos;ll get back to you soon.
             </motion.div>
           )}
         </motion.div>

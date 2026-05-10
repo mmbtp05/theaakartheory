@@ -1,6 +1,9 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { services } from "../constants/services";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,12 +39,15 @@ export default function Footer() {
         >
           {/* Brand */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full border-2 border-[#ba9550] flex items-center justify-center">
-                <span className="text-[#ba9550] font-bold">₹</span>
-              </div>
-              <span className="text-white font-semibold">The Aakar Theory</span>
-            </div>
+            <Link href="/" aria-label="The Aakar Theory - Home" className="inline-block">
+              <Image
+                src="/aakar-33 (1).png"
+                alt="The Aakar Theory Logo"
+                width={240}
+                height={96}
+                className="h-24 w-auto object-contain"
+              />
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Transforming spaces into timeless masterpieces with creativity and precision.
             </p>
@@ -51,18 +57,22 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h4 className="text-white font-semibold">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "About Us", "Services", "Portfolio", "Contact"].map(
-                (link) => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="text-gray-400 hover:text-[#ba9550] transition-colors duration-300 text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { label: "Home", href: "/#home" },
+                { label: "About Us", href: "/#about" },
+                { label: "Services", href: "/services" },
+                { label: "Portfolio", href: "/#portfolio" },
+                { label: "Contact", href: "/#contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-[#ba9550] transition-colors duration-300 text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -70,18 +80,16 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h4 className="text-white font-semibold">Services</h4>
             <ul className="space-y-2">
-              {["Residential Interiors", "Commercial Interiors", "Custom Furniture & Detailing", "Design Consultation", "Renovation & Makeovers"].map(
-                (service) => (
-                  <li key={service}>
-                    <a
-                      href="#services"
-                      className="text-gray-400 hover:text-[#ba9550] transition-colors duration-300 text-sm"
-                    >
-                      {service}
-                    </a>
-                  </li>
-                )
-              )}
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-gray-400 hover:text-[#ba9550] transition-colors duration-300 text-sm"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </motion.div>
@@ -101,18 +109,18 @@ export default function Footer() {
             © {currentYear} The Aakar Theory. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              href="/privacy-policy"
               className="text-gray-400 hover:text-[#ba9550] transition-colors duration-300"
             >
               <span className="text-sm">Privacy Policy</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/terms-and-conditions"
               className="text-gray-400 hover:text-[#ba9550] transition-colors duration-300"
             >
-              <span className="text-sm">Terms of Service</span>
-            </a>
+              <span className="text-sm">Terms &amp; Conditions</span>
+            </Link>
           </div>
         </motion.div>
       </div>

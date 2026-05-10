@@ -1,52 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-interface ServiceCard {
-  id: number;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-const services: ServiceCard[] = [
-  {
-    id: 1,
-    title: "Residential Interiors",
-    description:
-      "Tailor-made home interiors backed by expert design experience. High-quality materials, custom furniture, and premium lighting for refined living.",
-    icon: "🏠",
-  },
-  {
-    id: 2,
-    title: "Commercial Interiors",
-    description:
-      "Smart space planning that enhances efficiency, branding, and customer experience with high-quality materials and complete turnkey execution.",
-    icon: "🏢",
-  },
-  {
-    id: 3,
-    title: "Custom Furniture & Detailing",
-    description:
-      "Bespoke furniture designed to match your space, style, and functionality needs with precision detailing and premium craftsmanship.",
-    icon: "🪑",
-  },
-  {
-    id: 4,
-    title: "Design Consultation",
-    description:
-      "Expert guidance on layout planning, theme direction, material selection, and professional recommendations to improve functionality and aesthetics.",
-    icon: "💡",
-  },
-  {
-    id: 5,
-    title: "Renovation & Makeovers",
-    description:
-      "Complete renovation services including dismantling, false ceiling work, painting, flooring, tiling, electrical, plumbing, and carpentry with high-quality workmanship.",
-    icon: "🔨",
-  },
-];
+import { services } from "../constants/services";
 
 export default function Services() {
   const { ref, inView } = useInView({
@@ -147,34 +104,57 @@ export default function Services() {
               custom={index}
               variants={cardVariants}
               whileHover="hover"
-              className="relative group p-8 rounded-2xl border border-[#ba9550]/30 bg-gradient-to-br from-[#152731]/40 to-transparent hover:border-[#ba9550]/60 transition-all duration-300 backdrop-blur-sm"
             >
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#ba9550]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Link
+                href={`/services/${service.slug}`}
+                className="block h-full relative group p-8 rounded-2xl border border-[#ba9550]/30 bg-gradient-to-br from-[#152731]/40 to-transparent hover:border-[#ba9550]/60 transition-all duration-300 backdrop-blur-sm"
+              >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#ba9550]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="text-5xl mb-6">{service.icon}</div>
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="text-5xl mb-6">{service.icon}</div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {service.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {service.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-gray-400 leading-relaxed">
-                  {service.description}
-                </p>
-
-                {/* Bottom accent */}
-                <div className="mt-6 pt-6 border-t border-[#ba9550]/20">
-                  <p className="text-[#ba9550] text-sm font-semibold">
-                    Learn More →
+                  {/* Description */}
+                  <p className="text-gray-400 leading-relaxed">
+                    {service.shortDescription}
                   </p>
+
+                  {/* Bottom accent */}
+                  <div className="mt-6 pt-6 border-t border-[#ba9550]/20 flex items-center justify-between">
+                    <span className="text-[#ba9550] text-sm font-semibold">
+                      Learn More
+                    </span>
+                    <span className="text-[#ba9550] transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* View all CTA */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="mt-14 text-center"
+        >
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-[#ba9550]/50 text-[#ba9550] font-semibold hover:border-[#ba9550] hover:bg-[#ba9550]/10 transition-all duration-300"
+          >
+            View All Services
+            <span>→</span>
+          </Link>
         </motion.div>
       </div>
     </section>

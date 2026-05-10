@@ -120,7 +120,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#ba9550] mt-4"
           >
-            DESIGN BUILD INTERIOR
+            DESIGN • BUILD • INTERIOR
           </motion.h2>
 
           {/* Subheading */}
@@ -145,7 +145,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator - positioned at section bottom */}
-      <motion.div
+      {/* <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-8 inset-x-0 flex justify-center z-10"
@@ -166,7 +166,7 @@ export default function Hero() {
             />
           </svg>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Background carousel indicators - Commented for now */}
       {/* <div className="absolute bottom-20 inset-x-0 flex justify-center gap-2 z-10">
