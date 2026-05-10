@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { scrollToSection } from "../utils/scrollToSection";
 
@@ -70,18 +71,22 @@ export default function Hero() {
       {/* Background image carousel */}
       {backgroundImages.map((image, index) => (
         <motion.div
-          key={index}
+          key={image}
           initial={{ opacity: 0 }}
           animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
           className="absolute inset-0"
-          style={{
-            backgroundImage: `url('${image}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        />
+          aria-hidden={index !== currentImageIndex}
+        >
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
       ))}
 
       {/* Dark overlay */}
